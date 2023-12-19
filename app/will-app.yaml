@@ -18,7 +18,7 @@ spec:
           image: "paulbouwer/hello-kubernetes:1.10"
           env:
             - name: MESSAGE
-              value: "Hello from App1"
+              value: "Hello from App2"
           resources:
             requests:
               memory: "64Mi"
