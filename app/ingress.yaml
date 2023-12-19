@@ -11,7 +11,8 @@ spec:
   rules:
   - http:
       paths:
-      - path: /app
+      - path: /
+        pathType: Prefix
         backend:
           serviceName: wil-app
           servicePort: 80
