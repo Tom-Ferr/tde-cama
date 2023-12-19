@@ -15,17 +15,7 @@ spec:
     spec:
       containers:
         - name: wil-app
-          image: "wil42/playground:v1"
-          env:
-            - name: MESSAGE
-              value: "Hello from App1"
-          resources:
-            requests:
-              memory: "64Mi"
-              cpu: "100m"
-            limits:
-              memory: "128Mi"
-              cpu: "500m"
+          image: "wil42/playground:v2"
           ports:
           - containerPort: 8888
           imagePullPolicy: Always
