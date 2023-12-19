@@ -2,20 +2,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: will-app
+  name: app-one
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: will-app
+      app: app-one
   template:
     metadata:
       labels:
-        app: will-app
+        app: app-one
     spec:
       containers:
-        - name: will-app
-          image: "wil42/playground:v1"
+        - name: app-one
+          image: "paulbouwer/hello-kubernetes:1.10"
           env:
             - name: MESSAGE
               value: "Hello from App1"
@@ -33,11 +33,11 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: will-app
+  name: app-one
 spec:
   ports:
   - port: 80
     targetPort: 8080
     name: tcp
   selector:
-    app: will-app
+    app: app-one

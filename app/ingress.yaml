@@ -1,17 +1,19 @@
-apiVersion: extensions/v1beta1
+---
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
-  name: wil-playground
-  labels:
-    app: will-app
-  annotations:
-    ingress.kubernetes.io/ssl-redirect: "false"
-    traefik.ingress.kubernetes.io/rewrite-target: /
+  name: app1-ingress
+  # annotations:
+    # nginx.ingress.kubernetes.io/ingress.class: "nginx"
 spec:
   rules:
   - http:
       paths:
-      - path: /app
+      - path: /
+        pathType: Prefix
         backend:
-          serviceName: will-app
-          servicePort: 80
+          service:
+            name: app-one
+            port:
+              number: 80
+---
