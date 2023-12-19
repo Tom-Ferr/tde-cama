@@ -13,5 +13,5 @@ spec:
       paths:
       - path: /app
         backend:
-          serviceName: wil-app
+          serviceName: will-app
           servicePort: 80
