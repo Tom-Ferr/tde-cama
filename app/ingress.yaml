@@ -1,9 +1,9 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: will-playground
+  name: wil-app-ingress
   labels:
-    app: will-playground
+    app: argocdrocks
   annotations:
     ingress.kubernetes.io/ssl-redirect: "false"
     traefik.ingress.kubernetes.io/rewrite-target: /
@@ -13,5 +13,5 @@ spec:
       paths:
       - path: /
         backend:
-          serviceName: will-playground-service
+          serviceName: wil-app
           servicePort: 80
